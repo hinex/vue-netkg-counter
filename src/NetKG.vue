@@ -41,6 +41,7 @@
                 this.referrerDefault = document.referrer
                 this.domain = window.location.origin
                 this.page = window.location.href
+                this.isShow = true
             }
         },
         computed: {
