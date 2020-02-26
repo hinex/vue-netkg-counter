@@ -5,7 +5,7 @@
 Net.kg counter for SPA/SSR apps.
 
 ### Add website and get counter ID
-
+![counter id](https://github.com/hinex/vue-netkg-counter/raw/master/example.png)
 
 ### Install
 
