@@ -7,6 +7,11 @@
 <script>
     export default {
         name: "AddThis",
+        watch: {
+            '$route' (to) {
+                console.log(to)
+            }
+        },
         props: {
             siteId: {
                 type: String,
@@ -22,9 +27,6 @@
             },
         },
         computed: {
-            isSown() {
-              return !!process.browser
-            },
             location() {
                 return escape(document.referrer)
             },
@@ -35,7 +37,7 @@
                 return `${this.url}?id=${this.siteId}&fromsite=${this.siteId}`
             },
             image() {
-                if (!this.isSown) {
+                if (!process.browser) {
                     return `${this.img}?id=${this.siteId}`
                 }
 
