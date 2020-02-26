@@ -9,6 +9,7 @@
         name: "AddThis",
         watch: {
             '$route' (to, from) {
+                console.log(to, from)
                 this.referrerDefault = `${this.domain}${from}`
                 this.page = `${this.domain}${to}`
             }
@@ -35,15 +36,12 @@
               isSown: false,
           }
         },
-        created() {
-            if (this.isShown) {
+        mounted() {
+            if (!!process.browser) {
                 this.referrerDefault = document.referrer
                 this.domain = window.location.origin
                 this.page = window.location.href
             }
-        },
-        mounted() {
-            this.isSown = !!process.browser
         },
         computed: {
             location() {
