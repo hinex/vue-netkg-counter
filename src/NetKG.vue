@@ -1,5 +1,5 @@
 <template>
-    <a :href="link" target="_blank">
+    <a v-if="isSown" :href="link" target="_blank">
         <img :src="image" alt="Net.kg counter">
     </a>
 </template>
@@ -10,6 +10,7 @@
         watch: {
             '$route' (to) {
                 console.log(to)
+                this.referrerDefault = ''
             }
         },
         props: {
@@ -26,18 +27,31 @@
                 default: '//www.net.kg/img.php'
             },
         },
+        data() {
+          return {
+              referrerDefault: ''
+          }
+        },
+        created() {
+            if (this.isShown) {
+                this.referrerDefault = document.referrer
+            }
+        },
         computed: {
+            isSown() {
+              return !!process.browser
+            },
             location() {
                 return escape(document.referrer)
             },
             referrer() {
-                return escape(document.referrer)
+                return escape(this.referrerDefault)
             },
             link() {
                 return `${this.url}?id=${this.siteId}&fromsite=${this.siteId}`
             },
             image() {
-                if (!process.browser) {
+                if (!this.isSown) {
                     return `${this.img}?id=${this.siteId}`
                 }
 
