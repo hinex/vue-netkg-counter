@@ -8,9 +8,9 @@
     export default {
         name: "AddThis",
         watch: {
-            '$route' (to) {
-                console.log(to)
-                this.referrerDefault = ''
+            '$route' (to, from) {
+                this.referrerDefault = `${this.domain}${from}`
+                this.page = `${this.domain}${to}`
             }
         },
         props: {
@@ -29,12 +29,15 @@
         },
         data() {
           return {
-              referrerDefault: ''
+              referrerDefault: '',
+              domain: '',
+              page: '',
           }
         },
         created() {
             if (this.isShown) {
                 this.referrerDefault = document.referrer
+                this.domain = window.location.origin
             }
         },
         computed: {
