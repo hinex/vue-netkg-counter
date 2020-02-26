@@ -39,6 +39,7 @@
             if (this.isShown) {
                 this.referrerDefault = document.referrer
                 this.domain = window.location.origin
+                this.page = window.location.href
             }
         },
         mounted() {
@@ -46,7 +47,7 @@
         },
         computed: {
             location() {
-                return escape(document.page)
+                return escape(this.page)
             },
             referrer() {
                 return escape(this.referrerDefault)
