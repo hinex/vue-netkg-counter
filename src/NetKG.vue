@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "AddThis",
+        name: "NetKG",
         watch: {
             '$route' (to, from) {
                 console.log(to, from)

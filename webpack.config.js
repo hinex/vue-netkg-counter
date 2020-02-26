@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'counter.js',
-        library: "CounterNetKG",
+        library: "NetKG",
         libraryTarget: "commonjs2",
     },
     module: {
