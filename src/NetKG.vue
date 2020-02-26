@@ -38,7 +38,12 @@
         },
         mounted() {
             if (!!process.browser) {
-                this.referrerDefault = document.referrer
+                if (this.referrerDefault && this.page) {
+                    this.referrerDefault = this.page
+                } else {
+                    this.referrerDefault = document.referrer
+                }
+
                 this.domain = window.location.origin
                 this.page = window.location.href
                 this.isSown = true
