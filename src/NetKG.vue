@@ -32,6 +32,7 @@
               referrerDefault: '',
               domain: '',
               page: '',
+              isSown: false,
           }
         },
         created() {
@@ -40,12 +41,12 @@
                 this.domain = window.location.origin
             }
         },
+        mounted() {
+            this.isSown = !!process.browser
+        },
         computed: {
-            isSown() {
-              return !!process.browser
-            },
             location() {
-                return escape(document.referrer)
+                return escape(document.page)
             },
             referrer() {
                 return escape(this.referrerDefault)
