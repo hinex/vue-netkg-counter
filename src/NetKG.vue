@@ -21,7 +21,7 @@
                 default: '//www.net.kg/img.php'
             },
         },
-        computed() {
+        computed: {
             isSown() {
               return !!process.browser
             },

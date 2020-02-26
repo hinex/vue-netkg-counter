@@ -1,3 +1,3 @@
-import counter from './counter.vue';
+import counter from './NetKG.vue';
 
 export default counter;
