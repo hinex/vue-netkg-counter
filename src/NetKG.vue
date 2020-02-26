@@ -38,14 +38,10 @@
         },
         mounted() {
             if (!!process.browser) {
-                if (this.referrerDefault && this.page) {
-                    this.referrerDefault = this.page
-                } else {
-                    this.referrerDefault = document.referrer
-                }
-
+                this.referrerDefault = window.referrerPrev || document.referrer
                 this.domain = window.location.origin
                 this.page = window.location.href
+                window.referrerPrev = this.page
                 this.isSown = true
             }
         },
