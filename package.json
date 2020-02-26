@@ -1,0 +1,36 @@
+{
+  "name": "vue-netkg-counter",
+  "version": "0.0.1",
+  "description": "Counter NET.kg component for Vue.js",
+  "keywords": [
+    "vuejs",
+    "vuejs2",
+    "vue",
+    "share",
+    "addthis",
+    "nuxt"
+  ],
+  "main": "dist/counter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm dist/addthis.js && webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hinex/vue-netkg-counter.git"
+  },
+  "author": "Roman Hinex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hinex/vue-netkg-counter/issues"
+  },
+  "homepage": "https://github.com/hinex/vue-netkg-counter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "babel-loader": "^8.0.4",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2"
+  }
+}
