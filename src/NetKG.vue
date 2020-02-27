@@ -4,7 +4,7 @@
             <img :src="image" alt="Net.kg counter">
         </a>
         <noscript>
-            <a :href='`http://www.net.kg/stat.php?id=${this.siteId}&amp;fromsite=${this.siteId}`' target='_blank'>
+            <a :href='`http://www.net.kg/stat.php?id=${this.siteId}&fromsite=${this.siteId}`' target='_blank'>
                 <img :src="`http://www.net.kg/img.php?id=${this.siteId}`" border='0' alt='WWW.NET.KG'/>
             </a>
         </noscript>
