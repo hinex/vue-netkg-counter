@@ -1,6 +1,6 @@
 {
   "name": "vue-netkg-counter",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Counter NET.kg component for Vue.js",
   "keywords": [
     "vuejs",
